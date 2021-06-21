@@ -1,5 +1,9 @@
 package com.navin.learning.jira.service;
 
+import com.navin.learning.jira.model.CreateStory;
+
+import java.io.IOException;
+
 public interface JiraCreateService {
 
     //work management issue type
@@ -9,7 +13,7 @@ public interface JiraCreateService {
     //software issue types
     public void createEpic();
     public void createBug();
-    public void createStory();
+    public String createStory(CreateStory createStory) throws IOException;
 
 
     /*

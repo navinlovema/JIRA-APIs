@@ -10,12 +10,6 @@
     "description": "<description>",
     "issuetype": {
       "name": "<issueType>"
-    },
-    "timetracking":
-    {
-      "originalEstimate": "<originalEstimate>",
-      "remainingEstimate": "<remainingEstimate>"
-    },
-    "customfield_11050" : "<customField_11050>"
+    }
   }
 }

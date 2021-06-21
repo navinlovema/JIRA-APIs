@@ -18,12 +18,12 @@ public class JqlQueryController {
     @Autowired
     JqlQueryControllerService jqlQueryControllerService;
 
-    @GetMapping("/health")
+    @GetMapping("/jqlHealth")
     public ResponseEntity<String> getHealth() {
         return new ResponseEntity<>("Hi, welcome to JQL API's", HttpStatus.OK);
     }
 
-    @GetMapping("/search")
+    @GetMapping("/jqlSearch")
     public ResponseEntity<String> getJqlResult(@RequestParam String jqlQuery) {
         log.info("Inside the JQL Search Rest API...");
         if(jqlQuery.isEmpty())

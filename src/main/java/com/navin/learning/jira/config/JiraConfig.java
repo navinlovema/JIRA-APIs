@@ -10,6 +10,10 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpHeaders;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.concurrent.Executor;
 
 @Configuration
@@ -31,11 +35,11 @@ public class JiraConfig {
         executor.initialize();
         return executor;
     }
+
     @Bean(name = "httpBasicHeader")
     public HttpHeaders getInitialisedUserNamePass(
             @Value("${jira.user.name}") String userName,
-            @Value("${jira.user.password}") String password
-    ) {
+            @Value("${jira.user.password}") String password) {
         HttpHeaders httpHeaders = new HttpHeaders();
         String plainAuth = userName + ":" + password;
         byte[] plainCredsBytes = plainAuth.getBytes();
@@ -45,4 +49,5 @@ public class JiraConfig {
 
         return httpHeaders;
     }
+
 }
